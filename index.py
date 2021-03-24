@@ -1,14 +1,10 @@
 import json
-import requests
+from urllib.request import urlopen
 
 from settings import URL
 
 
 def handler(event, context):
-    response_data = requests.get(URL, headers={"Accept": "application/json"})
-    json_data = response_data.read()
-    deserialized_data = json.loads(json_data)
-    price = deserialized_data['price']
-    return {
-        'price': price,
-    }
+    response = urlopen(URL)
+    data = response.read().decode("utf-8")
+    return json.loads(data)['price']
