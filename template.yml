@@ -60,20 +60,3 @@ Resources:
       ManagedPolicyArns:
         - !Sub 'arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
       PermissionsBoundary: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:policy/CodeStar_${ProjectId}_PermissionsBoundary'
-
-  ApiGatewayInvokeLambdaPermission:
-  Type: "AWS::Lambda::Permission"
-  Properties: 
-    Action: lambda:InvokeFunction
-    FunctionName: !GetAtt 
-      - StockBot
-      - Arn
-    Principal: apigateway.amazonaws.com
-    SourceArn: !Join [
-      "", [
-        "arn:aws:execute-api:", 
-        {"Ref": "AWS::Region"}, ":", 
-        {"Ref": "AWS::AccountId"}, ":", 
-        !Ref YourAPIName, "/*/*/*"
-        ]
-      ]
