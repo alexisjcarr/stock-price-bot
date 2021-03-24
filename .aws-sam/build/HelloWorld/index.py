@@ -2,7 +2,7 @@ from urllib.request import urlopen
 from contextlib import closing
 import json
 
-from settings import URL
+from constants import URL
 
 
 def handler(event, context):
@@ -12,4 +12,5 @@ def handler(event, context):
         price = deserialized_data['price']
     return {
         'price': price,
+        'base64Encoded': False
     }
