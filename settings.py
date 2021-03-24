@@ -1,7 +1,5 @@
-from decouple import config
+import os
 
-
-API_KEY_ = config(API_KEY)
 
 URL = "https://financialmodelingprep.com/api/v3/stock/real-time-price/EB?\
-    apikey={}".format(API_KEY_)
+    apikey={}".format(os.environ.get('API_KEY'))
