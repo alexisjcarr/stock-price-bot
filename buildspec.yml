@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    API_KEY: 3f85987ebd7e8653286accd4ed7cb436  #this is only for testing purposes. Real key is hidden in .env
+    API_KEY: '3f85987ebd7e8653286accd4ed7cb436'  #this is only for testing purposes. Real key is hidden in .env
 
 phases:
   install:
