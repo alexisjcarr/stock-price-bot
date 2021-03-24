@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  variables:
+    API_KEY: 3f85987ebd7e8653286accd4ed7cb436  #this is only for testing purposes. Real key is hidden in .env
+
 phases:
   install:
     runtime-versions:
@@ -9,10 +13,6 @@ phases:
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
       - pip install pipenv
-      
-  env:
-    variables:
-      API_KEY: 3f85987ebd7e8653286accd4ed7cb436  #this is only for testing purposes. Real key is hidden in .env
 
   pre_build:
     commands:
