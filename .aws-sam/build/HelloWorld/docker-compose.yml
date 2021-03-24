@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+
+  stock-price-bot:
+    container_name: stock-price-bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - 8080:8080
