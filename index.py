@@ -7,4 +7,7 @@ from settings import URL
 def handler(event, context):
     response = urlopen(URL)
     data = response.read().decode("utf-8")
-    return json.loads(data)['price']
+    message = "Eventbrite's stock is ${} today. Holy cow!".format(json.loads(data)['price'])
+    
+    return message
+
